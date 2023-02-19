@@ -1,10 +1,13 @@
 <script setup>
 const isActive = true;
+const isBlack = true;
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <p :class="{ 'underLine active': isActive }">v-bindの設定方法の確認</p>
+  <p class="underLine" :class="{ active: isActive, back: isBlack }">
+    v-bindの設定方法の確認
+  </p>
 </template>
 
 <style>
@@ -14,5 +17,9 @@ const isActive = true;
 
 .underLine {
   text-decoration: underline;
+}
+
+.back {
+  background-color: black;
 }
 </style>
