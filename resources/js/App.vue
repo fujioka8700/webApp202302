@@ -1,10 +1,14 @@
 <script setup>
-const message = "<h2>Hello World</h2>";
+let message = "Hello World";
+
+const upperCase = () => {
+  message = message.toUpperCase();
+};
+
+upperCase();
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <p>{{ message }}</p>
-  <p v-text="message"></p>
   <div v-html="message"></div>
 </template>
