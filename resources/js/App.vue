@@ -4,7 +4,7 @@ const isActive = true;
 
 <template>
   <h1>Vue 3 入門</h1>
-  <p class="underLine" :class="{ active: isActive }">v-bindの設定方法の確認</p>
+  <p :class="{ 'underLine active': isActive }">v-bindの設定方法の確認</p>
 </template>
 
 <style>
