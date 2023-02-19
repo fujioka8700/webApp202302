@@ -1,11 +1,18 @@
 <script setup>
-const link = "https://ja.vuejs.org/";
+const isActive = true;
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <div v-html="link"></div>
-  <div>
-    <a v-bind:href="link">Vue公式</a>
-  </div>
+  <p class="underLine" :class="{ active: isActive }">v-bindの設定方法の確認</p>
 </template>
+
+<style>
+.active {
+  color: red;
+}
+
+.underLine {
+  text-decoration: underline;
+}
+</style>
