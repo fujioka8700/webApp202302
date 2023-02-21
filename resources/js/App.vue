@@ -14,6 +14,12 @@ const users = [
     </li>
   </ul>
 
+  <ul>
+    <li v-for="(user, index) in users" :key="user">
+      {{ index }}-{{ user.id }}:{{ user.name }}({{ user.email }})
+    </li>
+  </ul>
+
   <table>
     <thead>
       <tr>
