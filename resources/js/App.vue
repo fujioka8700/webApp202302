@@ -13,4 +13,31 @@ const users = [
       {{ user.id }}:{{ user.name }}({{ user.email }})
     </li>
   </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>ユーザー名</td>
+        <td>Email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="user in users" :key="user.id">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
+
+<style scoped>
+table {
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: solid 1px black;
+}
+</style>
