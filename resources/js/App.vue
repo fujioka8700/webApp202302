@@ -9,4 +9,7 @@ const languages = ["JavaScript", "TypeScript", "Vue.js"];
     <li>{{ languages[1] }}</li>
     <li>{{ languages[2] }}</li>
   </ul>
+  <ul>
+    <li v-for="language in languages" :key="language">{{ language }}</li>
+  </ul>
 </template>
