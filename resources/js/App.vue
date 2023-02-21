@@ -20,6 +20,10 @@ const users = [
     </li>
   </ul>
 
+  <template v-for="user of users" :key="user.id">
+    {{ user.id }}{{ user.name }}{{ user.email }}
+  </template>
+
   <table>
     <thead>
       <tr>
