@@ -1,9 +1,12 @@
 <script setup>
-const error = false;
+const languages = ["JavaScript", "TypeScript", "Vue.js"];
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <div v-if="error">エラーが発生しています。</div>
-  <div v-show="error">エラーが発生しています。</div>
+  <ul>
+    <li>{{ languages[0] }}</li>
+    <li>{{ languages[1] }}</li>
+    <li>{{ languages[2] }}</li>
+  </ul>
 </template>
