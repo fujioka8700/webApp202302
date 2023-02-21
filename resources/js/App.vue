@@ -1,8 +1,8 @@
 <script setup>
-const error = "エラー発生";
+const error = true;
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <div v-if="error">{{ error }}</div>
+  <div v-if="error">エラーが発生しています。</div>
 </template>
