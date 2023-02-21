@@ -1,8 +1,5 @@
 <script setup>
-const styleObject = {
-  color: "red",
-  fontSize: "3em",
-};
+const styleObject = "color:red; font-size: 3em";
 </script>
 
 <template>
