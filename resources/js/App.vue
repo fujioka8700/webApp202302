@@ -1,8 +1,8 @@
 <script setup>
-const styleObject = "color:red; font-size: 3em";
+const error = "エラー発生";
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <p :style="styleObject">v-bindの設定方法の確認</p>
+  <div v-if="error">{{ error }}</div>
 </template>
