@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h1>eventオブジェクト</h1>
-    <button @click="clickButton($event)">クリック</button>
+    <h1>イベント修飾子</h1>
+    <form @submit="send">
+      <button>送信</button>
+    </form>
   </div>
 </template>
 
 <script setup>
-const clickButton = (event) => {
-  event.target.style.backgroundColor = "red";
+const send = () => {
+  console.log("send");
 };
 </script>
 
