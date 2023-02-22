@@ -22,10 +22,10 @@ const users = [
 </script>
 
 <template>
-  <h1>オブジェクトの値をリスト化</h1>
-  <ul>
-    <li v-for="user in users" :key="user.id">
-      <div v-for="(value, name) in user">{{ name }}:{{ value }}</div>
-    </li>
-  </ul>
+  <h1>リストと分岐</h1>
+  <div v-for="user in users" :key="user.id">
+    <div v-if="!user.admin">
+      {{ user.name }}
+    </div>
+  </div>
 </template>
