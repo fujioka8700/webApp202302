@@ -2,13 +2,13 @@
   <div>
     <h1>clickイベント</h1>
     <button @click="clickButton">クリック</button>
-    <div class="square" @dblclick="clickButton"></div>
+    <div class="square" @click="clickButton('クリックされました')"></div>
   </div>
 </template>
 
 <script setup>
-const clickButton = () => {
-  console.log("val");
+const clickButton = (msg) => {
+  console.log(msg);
 };
 </script>
 
