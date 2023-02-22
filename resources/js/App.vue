@@ -1,18 +1,13 @@
 <template>
   <div>
-    <h1>clickイベント</h1>
-    <button v-on:click="clickButton('クリック'), another('click')">
-      クリック
-    </button>
+    <h1>eventオブジェクト</h1>
+    <button @click="clickButton($event)">クリック</button>
   </div>
 </template>
 
 <script setup>
-const clickButton = (msg) => {
-  console.log(msg);
-};
-const another = (msg) => {
-  console.log(msg);
+const clickButton = (event) => {
+  console.log(event);
 };
 </script>
 
