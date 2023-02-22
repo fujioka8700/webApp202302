@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>clickイベント</h1>
-    <button v-on:click="clickButton">クリック</button>
+    <button @click="clickButton">クリック</button>
   </div>
 </template>
 
