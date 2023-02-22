@@ -8,8 +8,8 @@ const user = {
 </script>
 
 <template>
-  <h1>オブジェクトのリスト化</h1>
+  <h1>オブジェクトのリスト化2</h1>
   <ul>
-    <li v-for="value in user" :key="value">{{ value }}</li>
+    <li v-for="(value, name) in user" :key="value">{{ name }}:{{ value }}</li>
   </ul>
 </template>
