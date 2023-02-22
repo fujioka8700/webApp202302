@@ -7,7 +7,7 @@
 
 <script setup>
 const clickButton = (event) => {
-  console.log(event);
+  event.target.style.backgroundColor = "red";
 };
 </script>
 
