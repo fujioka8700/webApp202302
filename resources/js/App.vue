@@ -1,18 +1,17 @@
 <template>
   <div>
-    <h1>refでも可能だが、不細工。</h1>
-    <button @click="addCount">count is: {{ state.count }}</button>
+    <h1>input要素 reactiveではない</h1>
+    <p>{{ message }}</p>
+    <input type="text" v-model="message" />
+    <button @click="clickButton">Click</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const state = ref({
-  count: 0,
-});
+const message = "Hello World";
 
-const addCount = () => {
-  state.value.count++;
+const clickButton = () => {
+  console.log(message);
 };
 </script>
 
