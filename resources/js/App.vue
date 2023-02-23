@@ -9,8 +9,9 @@
 import { ref, watch } from "vue";
 const count = ref(0);
 
-watch(count, (count) => {
+watch(count, (count, previousCount) => {
   console.log("count:", count);
+  console.log("previousCount:", previousCount);
 });
 </script>
 
