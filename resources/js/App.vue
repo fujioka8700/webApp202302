@@ -1,19 +1,18 @@
 <template>
   <div>
-    <h1>入力フォーム</h1>
-    <p>{{ message }}</p>
-    <input v-model.trim="message" type="text" />
-    <button @click="clickButton">Click</button>
+    <h1>Computed</h1>
+    <h2>fullName: {{ fullName }}</h2>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const message = ref("Hello World");
+import { reactive, computed } from "vue";
+const user = reactive({
+  firstName: "John",
+  lastName: "Doe",
+});
 
-const clickButton = () => {
-  console.log(message.value);
-};
+const fullName = computed(() => `${user.firstName} ${user.lastName}`);
 </script>
 
 <style lang="scss" scoped></style>
