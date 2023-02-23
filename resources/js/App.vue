@@ -1,16 +1,15 @@
 <template>
   <div>
-    <h1>$refの利用</h1>
-    <button @click="addCount">count is:{{ count }}</button>
+    <h1>reactiveの設定</h1>
+    <button @click="state.count++">count is: {{ state.count }}</button>
   </div>
 </template>
 
 <script setup>
-let count = $ref(0);
-
-const addCount = () => {
-  count++;
-};
+import { reactive } from "vue";
+const state = reactive({
+  count: 0,
+});
 </script>
 
 <style lang="scss" scoped></style>
