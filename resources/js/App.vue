@@ -1,14 +1,13 @@
 <template>
   <div>
-    <h1>キー修飾子</h1>
-    <input type="text" @keyup.enter="inputText" />
+    <h1>Reactivity</h1>
+    <button @click="count++">coint is:{{ count }}</button>
   </div>
 </template>
 
 <script setup>
-const inputText = (event) => {
-  console.log(event.target.value);
-};
+import { ref } from "vue";
+const count = ref(0);
 </script>
 
 <style lang="scss" scoped></style>
