@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h1>イベント</h1>
-    <button @click="clickButton('投げれるよ。')">クリック</button>
+    <h1>イベント修飾子</h1>
+    <form @submit.prevent="send">
+      <button>送信</button>
+    </form>
   </div>
 </template>
 
 <script setup>
-const clickButton = (msg) => {
-  console.log(`クリックされました。${msg}`);
+const send = () => {
+  console.log("send");
 };
 </script>
 
