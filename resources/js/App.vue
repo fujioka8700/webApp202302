@@ -2,7 +2,7 @@
   <div>
     <h1>入力フォーム</h1>
     <p>{{ message }}</p>
-    <input v-model="message" type="text" />
+    <input v-model.trim="message" type="text" />
     <button @click="clickButton">Click</button>
   </div>
 </template>
