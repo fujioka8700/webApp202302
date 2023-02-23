@@ -1,32 +1,21 @@
 <template>
   <div>
-    <h1>Computed セッター</h1>
-    <h2>{{ fullName }}</h2>
-    <button @click="changeName">Change Name</button>
+    <h1>watcher</h1>
+    <button @click="count++">Count:{{ count }}</button>
   </div>
 </template>
 
 <script setup>
-import { reactive, computed } from "vue";
-const user = reactive({
-  firstName: "John",
-  lastName: "Doe",
-});
+import { ref, watch } from "vue";
+const count = ref(0);
 
-const fullName = computed({
-  get() {
-    return user.firstName + " " + user.lastName;
+watch(
+  count,
+  (count) => {
+    console.log(`Count:${count}`);
   },
-  set(newValue) {
-    const names = newValue.split(" ");
-    user.firstName = names[0];
-    user.lastName = names[names.length - 1];
-  },
-});
-
-const changeName = () => {
-  fullName.value = "Jane Doe";
-};
+  { immediate: true }
+);
 </script>
 
 <style lang="scss" scoped></style>
