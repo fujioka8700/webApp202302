@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h1>reactiveの設定</h1>
+    <h1>refでも可能だが、不細工。</h1>
     <button @click="addCount">count is: {{ state.count }}</button>
   </div>
 </template>
 
 <script setup>
-import { reactive } from "vue";
-const state = reactive({
+import { ref } from "vue";
+const state = ref({
   count: 0,
 });
 
 const addCount = () => {
-  state.count++;
+  state.value.count++;
 };
 </script>
 
