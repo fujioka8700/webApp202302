@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>配列のリスト表示</h1>
-    <ol>
-      <li v-for="language in languages" :key="language">{{ language }}</li>
-    </ol>
+    <h1>オブジェクトのリスト化</h1>
+    <ul>
+      <li v-for="value in user" :key="value">{{ value }}</li>
+    </ul>
     <table>
       <thead>
         <tr>
@@ -15,11 +15,10 @@
       </thead>
       <tbody>
         <tr v-for="user in users" :key="user.id">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td v-if="user.admin === true">★</td>
-          <td v-else></td>
+          <td v-for="value in user" :key="value">
+            <div v-if="value === true">★</div>
+            <div v-else-if="value">{{ value }}</div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -27,7 +26,13 @@
 </template>
 
 <script setup>
-const languages = ["JavaScript", "TypeScript", "Vue.js"];
+const user = {
+  id: 1,
+  name: "John Doe",
+  email: "john@test.com",
+  admin: true,
+};
+
 const users = [
   { id: 1, name: "John Doe", email: "john@test.com", admin: true },
   { id: 2, name: "Jane Doe", email: "jane@example.com", admin: false },
@@ -38,10 +43,15 @@ const users = [
 <style lang="scss" scoped>
 table {
   border-collapse: collapse;
+  text-align: center;
 }
+th {
+  color: #ff9800;
+  background: #fff5e5;
+}
+
 table th,
 table td {
   border: solid 1px black;
-  /*実線 1px 黒*/
 }
 </style>
