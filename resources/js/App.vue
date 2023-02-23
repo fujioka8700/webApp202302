@@ -1,19 +1,18 @@
 <template>
   <div>
-    <h1>Reactivity</h1>
-    <h2>reactive</h2>
-    <button @click="addCount">coint is:{{ state.count }}</button>
+    <h1>入力フォーム</h1>
+    <p>{{ message }}</p>
+    <input v-model="message" type="text" />
+    <button @click="clickButton">Click</button>
   </div>
 </template>
 
 <script setup>
-import { reactive } from "vue";
-const state = reactive({
-  count: 0,
-});
+import { ref } from "vue";
+const message = ref("Hello World");
 
-const addCount = () => {
-  state.count++;
+const clickButton = () => {
+  console.log(message.value);
 };
 </script>
 
