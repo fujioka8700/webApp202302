@@ -1,14 +1,12 @@
 <template>
   <div>
-    <h1>キー修飾子</h1>
-    <input @keyup.enter="inputText" type="text" value="入力された文字" />
+    <h1>Reactivity(反応性)</h1>
+    <button @click="count++">count is:{{ count }}</button>
   </div>
 </template>
 
 <script setup>
-const inputText = (event) => {
-  console.log(event.target.value);
-};
+const count = 0;
 </script>
 
 <style lang="scss" scoped></style>
