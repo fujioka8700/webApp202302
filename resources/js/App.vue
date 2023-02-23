@@ -8,6 +8,7 @@
     <h2>fullName: {{ cFullName }}</h2>
     <h2>fullName: {{ cFullName }}</h2>
   </div>
+  <input type="text" v-model="user.firstName" />
 </template>
 
 <script setup>
