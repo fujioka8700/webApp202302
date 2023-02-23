@@ -1,24 +1,20 @@
 <template>
   <div>
-    <h1>Watcher + reactive</h1>
-    <button @click="state.count++">Count:{{ state.count }}</button>
+    <h1>watchEffect</h1>
+    <button @click="count++">Count:{{ count }}</button>
+    <button @click="count2++">Count2:{{ count2 }}</button>
   </div>
 </template>
 
 <script setup>
-import { reactive, watch } from "vue";
-const state = reactive({
-  count: 0,
-});
+import { ref, watchEffect } from "vue";
 
-watch(
-  () => state.count,
-  (count, previousCount) => {
-    console.log("count:", count);
-    console.log("previousCount:", previousCount);
-  },
-  { immediate: true }
-);
+const count = ref(0);
+const count2 = ref(100);
+
+watchEffect(() => {
+  console.log(count.value);
+});
 </script>
 
 <style lang="scss" scoped></style>
