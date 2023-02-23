@@ -1,18 +1,23 @@
 <template>
   <div>
-    <h1>Watcher</h1>
-    <button @click="count++">Count:{{ count }}</button>
+    <h1>Watcher + reactive</h1>
+    <button @click="state.count++">Count:{{ state.count }}</button>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
-const count = ref(0);
-
-watch(count, (count, previousCount) => {
-  console.log("count:", count);
-  console.log("previousCount:", previousCount);
+import { reactive, watch } from "vue";
+const state = reactive({
+  count: 0,
 });
+
+watch(
+  () => state.count,
+  (count, previousCount) => {
+    console.log("count:", count);
+    console.log("previousCount:", previousCount);
+  }
+);
 </script>
 
 <style lang="scss" scoped></style>
