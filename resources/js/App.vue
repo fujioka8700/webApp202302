@@ -16,7 +16,8 @@ watch(
   (count, previousCount) => {
     console.log("count:", count);
     console.log("previousCount:", previousCount);
-  }
+  },
+  { deep: true }
 );
 </script>
 
