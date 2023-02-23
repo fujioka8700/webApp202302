@@ -1,18 +1,18 @@
 <template>
   <div>
     <h1>v-model ディレクティブ</h1>
-    <p>{{ message }}</p>
-    <input type="text" v-model.lazy="message" />
+    <p>{{ inputNumber }}</p>
+    <input type="text" v-model.number="inputNumber" />
     <button @click="clickButton">Click</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-const message = ref("Hello World");
+const inputNumber = ref(null);
 
 const clickButton = () => {
-  console.log(message.value);
+  console.log(inputNumber.value);
 };
 </script>
 
