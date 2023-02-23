@@ -1,46 +1,47 @@
 <template>
   <div>
-    <h1>Vue3 入門</h1>
-    <p class="underLine" :class="{ active: isActive }">{{ message }}</p>
-    <p :style="{ color: activeColor }">
-      {{ message.length > 10 ? "Long" : "Short" }}
-    </p>
-    <p :style="styleObject" v-text="message"></p>
-    <p v-html="message2"></p>
-    <a :href="link" target="_blank">JavaScriipt リファレンス</a>
-    <div v-if="error">{{ error }}</div>
-    <div v-else>異常なし</div>
-    <div v-show="error">エラーが発生しました。</div>
+    <h1>配列のリスト表示</h1>
+    <ol>
+      <li v-for="language in languages" :key="language">{{ language }}</li>
+    </ol>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>名前</th>
+          <th>email</th>
+          <th>管理者</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user.id">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td v-if="user.admin === true">★</td>
+          <td v-else></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script setup>
-let message = "Hello World";
-const message2 = "<h2>Hello World</h2>";
-const link = "https://developer.mozilla.org/ja/";
-const isActive = true;
-const activeColor = "red";
-const styleObject = {
-  color: "blue",
-  fontWeight: 900,
-};
-
-const error = "エラー発生";
-
-const lowerCase = () => {
-  message = message.toLowerCase();
-};
-
-lowerCase();
+const languages = ["JavaScript", "TypeScript", "Vue.js"];
+const users = [
+  { id: 1, name: "John Doe", email: "john@test.com", admin: true },
+  { id: 2, name: "Jane Doe", email: "jane@example.com", admin: false },
+  { id: 3, name: "Kevin MacDonald", email: "kevin@test.com", admin: false },
+];
 </script>
 
 <style lang="scss" scoped>
-.active {
-  color: red;
-  font-size: 2em;
+table {
+  border-collapse: collapse;
 }
-
-.underLine {
-  text-decoration: underline;
+table th,
+table td {
+  border: solid 1px black;
+  /*実線 1px 黒*/
 }
 </style>
