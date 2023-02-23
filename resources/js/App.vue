@@ -1,15 +1,13 @@
 <template>
   <div>
-    <h1>イベント修飾子</h1>
-    <form @submit.prevent="send">
-      <button>送信</button>
-    </form>
+    <h1>キー修飾子</h1>
+    <input type="text" @keyup.enter="inputText" />
   </div>
 </template>
 
 <script setup>
-const send = () => {
-  console.log("send");
+const inputText = (event) => {
+  console.log(event.target.value);
 };
 </script>
 
