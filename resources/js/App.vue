@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>input要素 reactiveではない</h1>
+    <h1>v-model ディレクティブ</h1>
     <p>{{ message }}</p>
     <input type="text" v-model="message" />
     <button @click="clickButton">Click</button>
@@ -8,10 +8,11 @@
 </template>
 
 <script setup>
-const message = "Hello World";
+import { ref } from "vue";
+const message = ref("Hello World");
 
 const clickButton = () => {
-  console.log(message);
+  console.log(message.value);
 };
 </script>
 
