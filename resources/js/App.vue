@@ -1,18 +1,19 @@
 <template>
   <div>
-    <h1>v-model ディレクティブ</h1>
-    <p>{{ inputNumber }}</p>
-    <input type="text" v-model.number="inputNumber" />
+    <h1>typeof について</h1>
+    <input type="text" v-model="form.message" />
     <button @click="clickButton">Click</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const inputNumber = ref(null);
+import { reactive } from "vue";
+const form = reactive({
+  message: 0,
+});
 
 const clickButton = () => {
-  console.log(inputNumber.value);
+  console.log(typeof form.message);
 };
 </script>
 
