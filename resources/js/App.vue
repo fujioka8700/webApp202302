@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>イベント修飾子</h1>
-    <form @submit="send">
+    <form @submit.prevent="send">
       <button>送信</button>
     </form>
   </div>
