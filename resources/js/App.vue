@@ -1,20 +1,16 @@
 <template>
   <div>
-    <h1>typeof について</h1>
-    <input type="text" v-model="form.message" />
-    <button @click="clickButton">Click</button>
+    <h1>Computed プロパティ</h1>
+    <h2>fullName: {{ user.firstName }} {{ user.lastName }}</h2>
   </div>
 </template>
 
 <script setup>
 import { reactive } from "vue";
-const form = reactive({
-  message: 0,
+const user = reactive({
+  firstName: "John",
+  lastName: "Doe",
 });
-
-const clickButton = () => {
-  console.log(typeof form.message);
-};
 </script>
 
 <style lang="scss" scoped></style>
