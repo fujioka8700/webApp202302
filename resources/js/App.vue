@@ -18,12 +18,15 @@ const user = reactive({
   lastName: "Doe",
 });
 
-const fullName = () =>
-  `${Math.floor(Math.random() * 100)} ${user.firstName} ${user.lastName}`;
+const fullName = () => {
+  console.log("Function");
+  return `${user.firstName} ${user.lastName}`;
+};
 
-const cFullName = computed(
-  () => `${Math.floor(Math.random() * 100)} ${user.firstName} ${user.lastName}`
-);
+const cFullName = computed(() => {
+  console.log("Computed Propety");
+  return `${user.firstName} ${user.lastName}`;
+});
 </script>
 
 <style lang="scss" scoped></style>
