@@ -12,12 +12,12 @@ const state = reactive({
 });
 
 watch(
-  () => state,
+  () => state.count,
   (count, previousCount) => {
     console.log("count:", count);
     console.log("previousCount:", previousCount);
   },
-  { deep: true }
+  { immediate: true }
 );
 </script>
 
