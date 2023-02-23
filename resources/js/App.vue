@@ -1,14 +1,9 @@
 <template>
   <div>
-    <h1>Computed vs Function</h1>
-    <h2>fullName: {{ fullName() }}</h2>
-    <h2>fullName: {{ fullName() }}</h2>
-    <h2>fullName: {{ fullName() }}</h2>
-    <h2>fullName: {{ cFullName }}</h2>
-    <h2>fullName: {{ cFullName }}</h2>
-    <h2>fullName: {{ cFullName }}</h2>
+    <h1>Computed セッター</h1>
+    <h2>fullName: {{ fullName }}</h2>
+    <button @click="changeName">Change Name</button>
   </div>
-  <input type="text" v-model="user.firstName" />
 </template>
 
 <script setup>
@@ -18,15 +13,20 @@ const user = reactive({
   lastName: "Doe",
 });
 
-const fullName = () => {
-  console.log("Function");
-  return `${user.firstName} ${user.lastName}`;
-};
-
-const cFullName = computed(() => {
-  console.log("Computed Propety");
-  return `${user.firstName} ${user.lastName}`;
+const fullName = computed({
+  get() {
+    return `${user.firstName} ${user.lastName}`;
+  },
+  set(newValue) {
+    const names = newValue.split(" ");
+    user.firstName = names[0];
+    user.lastName = names[names.length - 1];
+  },
 });
+
+const changeName = () => {
+  fullName.value = "Jane Doe";
+};
 </script>
 
 <style lang="scss" scoped></style>
