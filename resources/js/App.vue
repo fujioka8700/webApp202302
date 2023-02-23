@@ -1,16 +1,19 @@
 <template>
   <div>
     <h1>Reactivity</h1>
-    <button @click="addCount">coint is:{{ count }}</button>
+    <h2>reactive</h2>
+    <button @click="addCount">coint is:{{ state.count }}</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const count = ref(0);
+import { reactive } from "vue";
+const state = reactive({
+  count: 0,
+});
 
 const addCount = () => {
-  count.value++;
+  state.count++;
 };
 </script>
 
