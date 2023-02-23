@@ -13,7 +13,7 @@ const count = ref(0);
 const count2 = ref(100);
 
 watchEffect(() => {
-  console.log(count.value);
+  console.log(`${count.value}/${count2.value}`);
 });
 </script>
 
