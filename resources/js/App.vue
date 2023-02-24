@@ -3,8 +3,8 @@
     <h1>Input 要素をコンポーネント化</h1>
     <p>{{ name }}</p>
     <p>{{ address }}</p>
-    <Input :model-value="name" @update:model-value="name = $event" />
-    <Input :model-value="address" @update:model-value="address = $event" />
+    <Input v-model="name" />
+    <Input v-model="address" />
   </div>
 </template>
 
