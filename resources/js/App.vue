@@ -7,11 +7,6 @@
 
 <script setup>
 import Hello from "./components/modules/Hello.vue";
-import { ref } from "vue";
-
-const person = ref({
-  name: "John",
-});
 </script>
 
 <style lang="scss" scoped>
