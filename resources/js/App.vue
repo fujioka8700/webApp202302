@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <h1>emit イベントを利用した更新</h1>
+    <h1>emit イベントでデータを渡す</h1>
     <Hello :name="name" @changeNameEvent="handleEvent" />
   </div>
 </template>
@@ -11,8 +11,8 @@ import { ref } from "vue";
 
 const name = ref("John");
 
-const handleEvent = () => {
-  name.value = "Ken";
+const handleEvent = (newName) => {
+  name.value = newName;
 };
 </script>
 
