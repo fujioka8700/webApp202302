@@ -3,6 +3,11 @@
     <h2>Hello コンポーネント</h2>
     <p>Hello {{ props.name }}</p>
     <button @click="changeName">Change Name</button>
+    <input
+      type="text"
+      :value="name"
+      @input="$emit('changeNameEvent', $event.target.value)"
+    />
   </div>
 </template>
 
@@ -12,12 +17,6 @@ import { defineProps, defineEmits } from "vue";
 const props = defineProps({
   name: String,
 });
-
-const emit = defineEmits(["changeNameEvent"]);
-
-const changeName = () => {
-  emit("changeNameEvent", { firstName: "Kevin", lastName: "James" });
-};
 </script>
 
 <style lang="scss" scoped>

@@ -12,7 +12,7 @@ import { ref } from "vue";
 const name = ref("John");
 
 const handleEvent = (newName) => {
-  name.value = `${newName.firstName} ${newName.lastName}`;
+  name.value = newName;
 };
 </script>
 
