@@ -2,6 +2,7 @@
   <div class="m-hello">
     <h1>Hello コンポーネント</h1>
     <p>Hello {{ props.name }}</p>
+    <button @click="changeName">Change Name</button>
   </div>
 </template>
 
@@ -10,6 +11,10 @@ import { defineProps } from "vue";
 const props = defineProps({
   name: String,
 });
+
+const changeName = () => {
+  props.name = "Ken";
+};
 </script>
 
 <style lang="scss" scoped>
