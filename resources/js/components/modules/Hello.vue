@@ -1,29 +1,14 @@
 <template>
   <div class="m-hello">
-    <h2 class="info" :class="attrs.class" :style="attrs.style">
-      Hello コンポーネント
-    </h2>
+    <h2>Hello コンポーネント</h2>
+    <button @click="$emit('notification')">通知</button>
   </div>
 </template>
 
-<script>
-export default {
-  // inheritAttrs: false,
-};
-</script>
-
-<script setup>
-import { useAttrs } from "vue";
-
-const attrs = useAttrs();
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .m-hello {
   background: lemonchiffon;
-}
-
-.active {
-  background: yellow;
 }
 </style>
