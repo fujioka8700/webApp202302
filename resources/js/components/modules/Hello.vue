@@ -6,7 +6,7 @@
     <input
       type="text"
       :value="name"
-      @input="$emit('changeNameEvent', $event.target.value)"
+      @input="$emit('update:modelValue', $event.target.value)"
     />
   </div>
 </template>
