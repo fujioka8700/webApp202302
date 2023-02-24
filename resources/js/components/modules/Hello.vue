@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2>初めてのコンポーネント</h2>
-    <p>{{ props.message }}</p>
-    <p>{{ props.name }}</p>
+    <p>{{ message }}</p>
+    <p>{{ name }}</p>
     <p>Ref Count: {{ count }}</p>
     <p>Reactive Count: {{ state.count }}</p>
     <div>
@@ -19,7 +19,7 @@ const state = reactive({
   count: 1,
 });
 
-const props = defineProps({
+const { name, message } = defineProps({
   message: String,
   name: String,
 });
