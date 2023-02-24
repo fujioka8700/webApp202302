@@ -16,7 +16,7 @@ const props = defineProps({
 const emit = defineEmits(["changeNameEvent"]);
 
 const changeName = () => {
-  emit("changeNameEvent", "Kevin");
+  emit("changeNameEvent", { firstName: "Kevin", lastName: "James" });
 };
 </script>
 
