@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h1>Boolean を渡したい場合</h1>
-    <p v-if="props.isAdmin">管理者です</p>
-    <p v-else>管理者ではありません</p>
+    <h1>子コンポーネント</h1>
+    <p>Hello {{ props.name }}</p>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
 const props = defineProps({
-  isAdmin: Boolean,
+  name: String,
 });
 </script>
 
