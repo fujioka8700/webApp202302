@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>Props 数値を渡したいとき</h1>
-    <p>{{ props.price + 100 }}</p>
+    <h1>Boolean を渡したい場合</h1>
+    <p v-if="props.isAdmin">管理者です</p>
+    <p v-else>管理者ではありません</p>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
-
 const props = defineProps({
-  price: Number,
+  isAdmin: Boolean,
 });
 </script>
 

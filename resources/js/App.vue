@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Vue3 初めてのコンポーネント</h1>
-    <Hello :price="1000" />
+    <h1>Vue3 コンポーネントの学習</h1>
+    <Hello :isAdmin="false" />
   </div>
 </template>
 
