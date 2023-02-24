@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>Vue3 初めてのコンポーネント</h1>
-    <Hello message="Propsの使い方" name="John" />
-    <Hello message="definePropsの使い方" />
-    <Hello />
+    <Hello :price="1000" />
   </div>
 </template>
 
