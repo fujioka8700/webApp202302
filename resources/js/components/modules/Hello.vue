@@ -2,6 +2,7 @@
   <div>
     <h2>初めてのコンポーネント</h2>
     <p>{{ props.message }}</p>
+    <p>{{ props.name }}</p>
     <p>Ref Count: {{ count }}</p>
     <p>Reactive Count: {{ state.count }}</p>
     <div>
@@ -18,7 +19,10 @@ const state = reactive({
   count: 1,
 });
 
-const props = defineProps(["message"]);
+const props = defineProps({
+  message: String,
+  name: String,
+});
 
 const addRefCount = () => {
   count.value++;
