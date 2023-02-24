@@ -2,7 +2,7 @@
   <div>
     <h1>Vue3 初めてのコンポーネント</h1>
     <Hello message="Propsの使い方" />
-    <Hello />
+    <Hello message="definePropsの使い方" />
     <Hello />
   </div>
 </template>
