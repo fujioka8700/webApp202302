@@ -1,23 +1,29 @@
 <template>
   <div class="m-hello">
-    <h2 class="info">Hello コンポーネント</h2>
-    <p :class="$attrs.class">class 属性の渡し方確認中</p>
+    <h2 class="info" :class="attrs.class" :style="attrs.style">
+      Hello コンポーネント
+    </h2>
   </div>
 </template>
 
 <script>
 export default {
-  inheritAttrs: false,
+  // inheritAttrs: false,
 };
 </script>
 
 <script setup>
-import { defineProps } from "vue";
-const props = defineProps({});
+import { useAttrs } from "vue";
+
+const attrs = useAttrs();
 </script>
 
 <style lang="scss" scoped>
 .m-hello {
   background: lemonchiffon;
+}
+
+.active {
+  background: yellow;
 }
 </style>

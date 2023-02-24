@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <h1>class 属性の設定を渡したい場合</h1>
-    <Hello class="active" />
+    <h1>useAttrs による属性の取得</h1>
+    <Hello style="color: red" class="active" />
   </div>
 </template>
 
