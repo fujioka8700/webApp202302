@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>子コンポーネント</h1>
+  <div class="m-hello">
+    <h1>Hello コンポーネント</h1>
     <p>Hello {{ props.name }}</p>
   </div>
 </template>
@@ -12,4 +12,8 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.m-hello {
+  background: lemonchiffon;
+}
+</style>
