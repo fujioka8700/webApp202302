@@ -20,8 +20,8 @@ const state = reactive({
 });
 
 const { name, message } = defineProps({
-  message: String,
-  name: String,
+  message: { type: String, required: true },
+  name: { type: String, default: "Jane" },
 });
 
 const addRefCount = () => {
