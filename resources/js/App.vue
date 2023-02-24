@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1>reactive な変数を渡したい場合</h1>
-    <Hello :name="name" />
+    <Hello :person="person" />
     <button @click="changeName">Change Name</button>
   </div>
 </template>
@@ -10,10 +10,14 @@
 import Hello from "./components/modules/Hello.vue";
 import { ref } from "vue";
 
-const name = ref("John");
+const person = ref({
+  name: "John",
+});
 
+// 子コンポーネントで親コンポーネントで定義した
+// reactiveな変数を更新したい場合にはemitイベントを利用します。
 const changeName = () => {
-  name.value = "Raou";
+  person.name.value = "Raou";
 };
 </script>
 
