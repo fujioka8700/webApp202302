@@ -18,9 +18,7 @@ const state = reactive({
   count: 1,
 });
 
-const props = defineProps({
-  message: String,
-});
+const props = defineProps(["message"]);
 
 const addRefCount = () => {
   count.value++;
