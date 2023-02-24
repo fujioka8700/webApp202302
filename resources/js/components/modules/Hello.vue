@@ -1,20 +1,13 @@
 <template>
   <div class="m-hello">
-    <h1>Hello コンポーネント</h1>
-    <p>Hello {{ props.person.name }}</p>
-    <button @click="changeName">Change Name</button>
+    <h2 class="info">Hello コンポーネント</h2>
+    <p :class="$attrs.class">class 属性の渡し方確認中</p>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
-const props = defineProps({
-  person: Object,
-});
-
-const changeName = () => {
-  props.person.name = "Ken";
-};
+const props = defineProps({});
 </script>
 
 <style lang="scss" scoped>
