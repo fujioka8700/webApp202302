@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Vue3 初めてのコンポーネント</h1>
-    <Hello />
+    <Hello message="Propsの使い方" />
     <Hello />
     <Hello />
   </div>
