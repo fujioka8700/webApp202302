@@ -1,14 +1,13 @@
 <template>
   <div class="app">
-    <h1>Scoped Slotの設定</h1>
-    <User>
-      <template v-slot:header="{ message }">
-        <div>{{ message }}</div>
-      </template>
-      <template v-slot:default="{ message, content }">
-        <div>{{ message }}, {{ content }}</div>
-      </template>
-    </User>
+    <h1>少し複雑なScoped Slot設定</h1>
+    <ul>
+      <User>
+        <template v-slot:default="{ user }">
+          <li>{{ user.name }}</li>
+        </template>
+      </User>
+    </ul>
   </div>
 </template>
 
