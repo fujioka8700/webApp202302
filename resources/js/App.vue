@@ -1,8 +1,7 @@
 <template>
   <div class="app">
-    <User>
-      <span style="color: blue; font-size: 2em">服部 秀幸</span>
-    </User>
+    <h1>Slot 初期値の設定</h1>
+    <User />
   </div>
 </template>
 
