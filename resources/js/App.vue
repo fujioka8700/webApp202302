@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <User>服部 英行</User>
+    <User name="服部 英行" />
   </div>
 </template>
 
