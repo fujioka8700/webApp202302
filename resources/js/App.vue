@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1>Slot 初期値の設定</h1>
-    <User />
+    <User><span style="color: red; font-size: 2em">Jane Doe</span></User>
   </div>
 </template>
 
