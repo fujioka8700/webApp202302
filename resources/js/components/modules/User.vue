@@ -1,6 +1,7 @@
 <template>
   <div class="m-user">
-    <slot message="ユーザ"></slot>
+    <slot name="header" message="ヘッダー"></slot>
+    <slot message="ユーザ" content="コンテンツ"></slot>
   </div>
 </template>
 

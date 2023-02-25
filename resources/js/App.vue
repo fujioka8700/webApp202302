@@ -2,7 +2,12 @@
   <div class="app">
     <h1>Scoped Slotの設定</h1>
     <User>
-      <template v-slot:default="slotProps">{{ slotProps }}</template>
+      <template v-slot:header="slotProps">
+        <div>{{ slotProps }}</div>
+      </template>
+      <template v-slot:default="slotProps">
+        <div>{{ slotProps }}</div>
+      </template>
     </User>
   </div>
 </template>
