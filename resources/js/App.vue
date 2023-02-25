@@ -3,7 +3,7 @@
     <h1>少し複雑なScoped Slot設定</h1>
     <ul>
       <User>
-        <template v-slot:default="{ user }">
+        <template v-slot="{ user }">
           <li>{{ user.name }}</li>
         </template>
       </User>
