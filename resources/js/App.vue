@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <User name="服部 英行" />
+    <User>
+      <span style="color: blue; font-size: 2em">服部 秀幸</span>
+    </User>
   </div>
 </template>
 
