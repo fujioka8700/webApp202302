@@ -1,10 +1,14 @@
 <template>
   <div>
-    <p>
-      このユーザの名前は<slot
-        ><span style="color: green; font-size: 2em">高橋 沙織</span></slot
-      >です。
-    </p>
+    <div>
+      <slot name="title"></slot>
+    </div>
+    <div>
+      <slot name="content"></slot>
+    </div>
+    <div>
+      <slot name="actions"></slot>
+    </div>
   </div>
 </template>
 
