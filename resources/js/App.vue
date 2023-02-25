@@ -3,7 +3,7 @@
     <h1>Slot 複数のSlotsの設定</h1>
     <User>
       <template v-slot:title>服部伝説</template>
-      <template v-slot:content>
+      <template v-slot:default>
         <div>
           <p>
             <span style="font-weight: 900">服部秀幸</span>がひたすら戦います。
