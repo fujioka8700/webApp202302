@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <div>
-      <slot name="title"></slot>
-    </div>
-    <div>
-      <slot></slot>
-    </div>
-    <div>
-      <slot name="actions"></slot>
-    </div>
+  <div class="m-user">
+    <slot message="ユーザ"></slot>
   </div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.m-user {
+  background: #f0f8ff;
+}
+</style>
