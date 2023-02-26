@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="m-input">
     <input
       type="text"
       :value="props.modelValue"
@@ -14,4 +14,8 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.m-input {
+  background: #ffffe0;
+}
+</style>
