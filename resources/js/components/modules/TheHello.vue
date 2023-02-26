@@ -14,7 +14,12 @@ const { name } = defineProps({
 const emit = defineEmits(["changeNameEvent"]);
 
 const sendNotification = () => {
-  emit("changeNameEvent", "いわかべ");
+  const user = {
+    firstName: "さめじま",
+    lastName: "りき",
+  };
+
+  emit("changeNameEvent", user);
 };
 </script>
 
