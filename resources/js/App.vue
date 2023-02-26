@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Provide / Inject</h1>
-    <CompA />
+    <CompA message="propsでデータ渡し" />
   </div>
 </template>
 
