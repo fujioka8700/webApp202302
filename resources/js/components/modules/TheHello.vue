@@ -9,15 +9,20 @@
       <button @click="addRefCount">Ref Count++</button>
       <button @click="addReactiveCount">Reactive Count++</button>
     </div>
+    <div v-if="price">
+      <p>{{ price }}</p>
+      <button @click="price++">price++</button>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 
-const { message, name } = defineProps({
-  message: { type: String, required: true },
+const { message, name, price } = defineProps({
+  message: { type: String, required: false },
   name: { type: String, default: "つねを" },
+  price: Number,
 });
 
 const count = ref(0);

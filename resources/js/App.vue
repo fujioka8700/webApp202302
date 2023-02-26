@@ -3,7 +3,7 @@
     <h1>Vue3 入門</h1>
     <TheHello message="Propsの使い方" name="よりつね" />
     <TheHello message="defineProps関数を使用" />
-    <TheHello />
+    <TheHello :price="1000" />
   </div>
 </template>
 
