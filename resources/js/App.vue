@@ -7,6 +7,9 @@
 
 <script setup>
 import CompA from "./components/modules/CompA.vue";
+import { provide } from "vue";
+
+provide("message", "Provide/Injectでデータ渡し");
 </script>
 
 <style lang="scss" scoped></style>
