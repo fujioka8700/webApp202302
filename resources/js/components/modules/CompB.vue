@@ -9,8 +9,7 @@
 <script setup>
 import { inject } from "vue";
 
-const count = inject("count");
-const addCount = inject("addCount");
+const { count, addCount } = inject("count");
 </script>
 
 <style lang="scss" scoped>

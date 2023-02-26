@@ -15,8 +15,10 @@ const addCount = () => {
   count.value++;
 };
 
-provide("count", count);
-provide("addCount", addCount);
+provide("count", {
+  count,
+  addCount,
+});
 </script>
 
 <style lang="scss" scoped>
