@@ -1,17 +1,22 @@
 <template>
   <div class="m-theuser">
-    <p>
-      くにおくんが在籍している学校:<slot
-        name="school"
-        message="くにおくん率いる高校です。"
-        >熱血高校</slot
-      >
-    </p>
-    <p>学ランの色:<slot name="uniformColor">白色</slot></p>
+    <slot v-for="user in users" :user="user"></slot>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const users = ref([]);
+
+const fetchPost = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+
+  users.value = await res.json();
+};
+
+fetchPost();
+</script>
 
 <style lang="scss" scoped>
 .m-theuser {

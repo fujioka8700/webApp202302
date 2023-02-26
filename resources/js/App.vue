@@ -1,16 +1,14 @@
 <template>
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
-    <h2>Slot</h2>
-    <TheUser>
-      <template v-slot:school="{ message }">
-        <span>冷報学園</span>
-        <p>{{ message }}</p>
-      </template>
-      <template v-slot:uniformColor>
-        <span>朱色</span>
-      </template>
-    </TheUser>
+    <h2>少し複雑なScoped Slot設定</h2>
+    <ul>
+      <TheUser>
+        <template v-slot:default="{ user }">
+          <li>{{ user.name }}</li>
+        </template>
+      </TheUser>
+    </ul>
   </div>
 </template>
 
