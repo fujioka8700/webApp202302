@@ -1,14 +1,17 @@
 <template>
   <div class="app">
-    <h1>Vue3 入門</h1>
-    <TheHello message="Propsの使い方" name="よりつね" />
-    <TheHello message="defineProps関数を使用" />
-    <TheHello :price="1000" />
+    <h1>Vue3 入門 Components 2周目</h1>
+    <TheHello :name="name" :admin="admin" />
   </div>
 </template>
 
 <script setup>
 import TheHello from "./components/modules/TheHello.vue";
+
+const { name, admin } = {
+  name: "よりつね",
+  admin: true,
+};
 </script>
 
 <style lang="scss" scoped>
