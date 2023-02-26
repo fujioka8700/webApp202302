@@ -7,6 +7,16 @@
 
 <script setup>
 import CompA from "./components/modules/CompA.vue";
+import { ref, provide } from "vue";
+
+const count = ref(0);
+
+const addCount = () => {
+  count.value++;
+};
+
+provide("count", count);
+provide("addCount", addCount);
 </script>
 
 <style lang="scss" scoped>
