@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
-    <TheHello class="active" />
+    <TheHello class="active" style="color: blue" />
   </div>
 </template>
 
