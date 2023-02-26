@@ -1,13 +1,11 @@
 <template>
   <div class="m-hello">
-    <h2>Hello コンポーネント</h2>
-    <p>{{ name }}</p>
+    <h2 class="info">Hello コンポーネント</h2>
+    <p :class="$attrs.class">くにおくんのライバルは、りきです。</p>
   </div>
 </template>
 
-<script setup>
-const { name } = defineProps(["name"]);
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .m-hello {
