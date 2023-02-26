@@ -11,8 +11,8 @@ import { ref } from "vue";
 
 const name = ref("よりつね");
 
-const handleEvent = () => {
-  name.value = "つねを";
+const handleEvent = (newName) => {
+  name.value = newName;
 };
 </script>
 
