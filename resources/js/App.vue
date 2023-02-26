@@ -3,8 +3,9 @@
     <h1>Vue3 入門 Components 2周目</h1>
     <h2>Slot</h2>
     <TheUser>
-      <template v-slot:school>
+      <template v-slot:school="{ message }">
         <span>冷報学園</span>
+        <p>{{ message }}</p>
       </template>
       <template v-slot:uniformColor>
         <span>朱色</span>
