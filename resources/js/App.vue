@@ -1,12 +1,14 @@
 <template>
   <div class="app">
-    <h1>reactive を利用してデータ共有(状態管理)</h1>
-    <CompA />
+    <h1>Vue3 入門</h1>
+    <TheHello />
+    <TheHello />
+    <TheHello />
   </div>
 </template>
 
 <script setup>
-import CompA from "./components/modules/CompA.vue";
+import TheHello from "./components/modules/TheHello.vue";
 </script>
 
 <style lang="scss" scoped>
