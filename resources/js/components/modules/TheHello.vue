@@ -1,15 +1,20 @@
 <template>
-  <!-- <div class="m-hello"> -->
-  <h2>Hello コンポーネント</h2>
-  <button @click="sendNotification">通知</button>
-  <!-- </div> -->
+  <div class="m-hello">
+    <h2>Hello コンポーネント</h2>
+    <p>名前：{{ name }}</p>
+    <button @click="sendNotification">通知</button>
+  </div>
 </template>
 
 <script setup>
-const emit = defineEmits(["isNotification"]);
+const { name } = defineProps({
+  name: String,
+});
+
+const emit = defineEmits(["changeNameEvent"]);
 
 const sendNotification = () => {
-  emit("isNotification");
+  emit("changeNameEvent");
 };
 </script>
 
