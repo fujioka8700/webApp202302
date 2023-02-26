@@ -18,8 +18,10 @@ const addCount = () => {
 };
 
 provide("message", message);
-provide("count", count);
-provide("addCount", addCount);
+provide("count", {
+  count,
+  addCount,
+});
 </script>
 
 <style lang="scss" scoped>

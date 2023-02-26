@@ -11,8 +11,7 @@
 import { inject } from "vue";
 
 const message = inject("message");
-const count = inject("count");
-const addCount = inject("addCount");
+const { count, addCount } = inject("count");
 </script>
 
 <style lang="scss" scoped>
