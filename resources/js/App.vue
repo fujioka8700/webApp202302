@@ -8,15 +8,18 @@
     </div>
     <TheTokyo v-if="city === 'tokyo'" />
     <TheOsaka v-else />
+    <component :is="tab"></component>
   </div>
 </template>
 
 <script setup>
 import TheTokyo from "./components/modules/TheTokyo.vue";
 import TheOsaka from "./components/modules/TheOsaka.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const city = ref("tokyo");
+
+const tab = computed(() => (city.value === "tokyo" ? TheTokyo : TheOsaka));
 </script>
 
 <style lang="scss" scoped>
