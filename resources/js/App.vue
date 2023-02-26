@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <h1>Provide / Inject Reactiveな変数を渡す</h1>
-    <CompA message="propsでデータ渡し" />
-    <input type="text" v-model="message" />
+  <div class="app">
+    <h1>Provide / Inject 子コンポーネントで更新</h1>
+    <CompA />
   </div>
 </template>
 
 <script setup>
 import CompA from "./components/modules/CompA.vue";
-import { ref, provide } from "vue";
-
-const message = ref("Provide/Injectでデータ渡し");
-
-provide("message", message);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app {
+  background: #f0f8ff;
+}
+</style>
