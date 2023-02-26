@@ -12,8 +12,14 @@ import TheCompA from "./components/modules/TheCompA.vue";
 import { provide, ref } from "vue";
 
 const message = ref("Provide / Inject でデータ渡し");
+const count = ref(0);
+const addCount = () => {
+  count.value++;
+};
 
 provide("message", message);
+provide("count", count);
+provide("addCount", addCount);
 </script>
 
 <style lang="scss" scoped>
