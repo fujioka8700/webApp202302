@@ -6,7 +6,9 @@
       <button @click="city = 'kyoto'">京都</button>
     </div>
     <div>
-      <component :is="tab"></component>
+      <keep-alive>
+        <component :is="tab"></component>
+      </keep-alive>
     </div>
   </div>
 </template>
