@@ -1,22 +1,14 @@
 <template>
-  <!-- <div class="m-hello"> -->
-  <h2 :style="attrs.style" class="info">Hello コンポーネント</h2>
-  <p :class="attrs.class">くにおくんのライバルは、りきです。</p>
-  <!-- </div> -->
+  <div class="m-hello">
+    <h2>Hello コンポーネント</h2>
+    <button @click="$emit('notification')">通知</button>
+  </div>
 </template>
 
-<script setup>
-import { useAttrs } from "vue";
-const attrs = useAttrs();
-console.log(attrs);
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .m-hello {
   background: #fff0f5;
-}
-
-.active {
-  color: red;
 }
 </style>
