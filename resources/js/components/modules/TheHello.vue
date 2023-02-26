@@ -1,23 +1,29 @@
 <template>
   <div class="m-hello">
     <h3>Hello コンポーネント</h3>
-    <p>名前：{{ props.name }}</p>
-    <input type="text" v-model="name" @input="changeName" />
-    <p>{{ name }}</p>
-    <TheInput :model-value="name" @update:model-value="name = $event" />
+    <p>Hello {{ name }}</p>
+    <input type="text" v-model="name" @input="changeName" id="" />
   </div>
 </template>
 
 <script setup>
-import TheInput from "./TheInput.vue";
 import { ref } from "vue";
 const props = defineProps({
   name: String,
 });
 
-const name = ref(props.name);
+const emit = defineEmits({
+  changeNameEvent: (name) => {
+    if (name) {
+      return true;
+    } else {
+      console.log("文字列が空です。");
+      return false;
+    }
+  },
+});
 
-const emit = defineEmits(["changeNameEvent"]);
+const name = ref(props.name);
 
 const changeName = () => {
   emit("changeNameEvent", name.value);
