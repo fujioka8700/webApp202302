@@ -1,19 +1,22 @@
 <template>
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
-    <h2>少し複雑なScoped Slot設定</h2>
-    <ul>
-      <TheUser>
-        <template v-slot:default="{ user }">
-          <li>{{ user.name }}</li>
-        </template>
-      </TheUser>
-    </ul>
+    <h2>Dynamic コンポーネント</h2>
+    <div>
+      <button @click="city = 'tokyo'">東京</button>
+      <button @click="city = 'osaka'">大阪</button>
+    </div>
+    <TheTokyo v-if="city === 'tokyo'" />
+    <TheOsaka v-else />
   </div>
 </template>
 
 <script setup>
-import TheUser from "./components/modules/TheUser.vue";
+import TheTokyo from "./components/modules/TheTokyo.vue";
+import TheOsaka from "./components/modules/TheOsaka.vue";
+import { ref } from "vue";
+
+const city = ref("tokyo");
 </script>
 
 <style lang="scss" scoped>
