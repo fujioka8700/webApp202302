@@ -6,9 +6,13 @@
       <button @click="city = 'tokyo'">東京</button>
       <button @click="city = 'osaka'">大阪</button>
     </div>
-    <TheTokyo v-if="city === 'tokyo'" />
-    <TheOsaka v-else />
-    <component :is="tab"></component>
+    <keep-alive>
+      <TheTokyo v-if="city === 'tokyo'" />
+      <TheOsaka v-else />
+    </keep-alive>
+    <keep-alive>
+      <component :is="tab"></component>
+    </keep-alive>
   </div>
 </template>
 
