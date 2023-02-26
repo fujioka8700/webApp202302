@@ -1,24 +1,12 @@
 <template>
   <div class="app">
-    <h1>Provide / Inject 子コンポーネントで更新</h1>
+    <h1>reactive を利用してデータ共有(状態管理)</h1>
     <CompA />
   </div>
 </template>
 
 <script setup>
 import CompA from "./components/modules/CompA.vue";
-import { ref, provide } from "vue";
-
-const count = ref(0);
-
-const addCount = () => {
-  count.value++;
-};
-
-provide("count", {
-  count,
-  addCount,
-});
 </script>
 
 <style lang="scss" scoped>

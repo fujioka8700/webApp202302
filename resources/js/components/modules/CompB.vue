@@ -1,15 +1,13 @@
 <template>
   <div class="m-classb">
     <h3>CompB コンポーネント</h3>
-    <p>Count:{{ count }}</p>
-    <button @click="addCount">+</button>
+    <p>Count:{{ counter.count }}</p>
+    <button @click="counter.addCount">+</button>
   </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
-
-const { count, addCount } = inject("count");
+import { counter } from "../../store/countstore";
 </script>
 
 <style lang="scss" scoped>
