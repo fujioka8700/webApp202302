@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
+    <h2>input 要素をコンポーネント化</h2>
     <p>{{ name }}</p>
     <TheHello :name="name" @changeNameEvent="handleEvent" />
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="m-hello">
-    <h2>Hello コンポーネント</h2>
+    <h3>Hello コンポーネント</h3>
     <p>名前：{{ name }}</p>
     <button @click="sendNotification">通知</button>
     <input type="text" v-model="name" @input="changeName" />
