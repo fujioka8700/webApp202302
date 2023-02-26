@@ -1,16 +1,12 @@
 <template>
   <div class="m-hello">
     <h2>Hello コンポーネント</h2>
-    <p>ユーザー名:{{ name }}</p>
-    <p v-if="admin">管理者です。</p>
+    <p>{{ name }}</p>
   </div>
 </template>
 
 <script setup>
-const { name, admin } = defineProps({
-  name: String,
-  admin: Boolean,
-});
+const { name } = defineProps(["name"]);
 </script>
 
 <style lang="scss" scoped>
