@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
+    <p>{{ name }}</p>
     <TheHello :name="name" @changeNameEvent="handleEvent" />
   </div>
 </template>
@@ -11,8 +12,8 @@ import { ref } from "vue";
 
 const name = ref("よりつね");
 
-const handleEvent = (newUser) => {
-  name.value = `${newUser.firstName} ${newUser.lastName}`;
+const handleEvent = (newName) => {
+  name.value = newName;
 };
 </script>
 
