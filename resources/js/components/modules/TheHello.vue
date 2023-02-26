@@ -1,12 +1,16 @@
 <template>
   <!-- <div class="m-hello"> -->
   <h2>Hello コンポーネント</h2>
-  <button @click="$emit('notification')">通知</button>
+  <button @click="sendNotification">通知</button>
   <!-- </div> -->
 </template>
 
 <script setup>
-const emits = defineEmits(["notification"]);
+const emit = defineEmits(["isNotification"]);
+
+const sendNotification = () => {
+  emit("isNotification");
+};
 </script>
 
 <style lang="scss" scoped>
