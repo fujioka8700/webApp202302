@@ -1,17 +1,13 @@
 <template>
   <div class="m-thecompb">
     <h3>CompB</h3>
-    <p>{{ message }}</p>
-    <p>{{ count }}</p>
-    <button @click="addCount">Add Count</button>
+    <p>Count:{{ counter.count }}</p>
+    <button @click="counter.addCount">Count Up</button>
   </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
-
-const message = inject("message");
-const { count, addCount } = inject("count");
+import { counter } from "../../store/countstore2";
 </script>
 
 <style lang="scss" scoped>
