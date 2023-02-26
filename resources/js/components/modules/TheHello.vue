@@ -16,8 +16,8 @@
 import { ref, reactive } from "vue";
 
 const { message, name } = defineProps({
-  message: String,
-  name: String,
+  message: { type: String, required: true },
+  name: { type: String, default: "つねを" },
 });
 
 const count = ref(0);
