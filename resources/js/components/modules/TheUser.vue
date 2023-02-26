@@ -1,6 +1,7 @@
 <template>
   <div class="m-theuser">
-    <p>くにおくんが在籍している学校:<slot></slot></p>
+    <p>くにおくんが在籍している学校:<slot name="school">熱血高校</slot></p>
+    <p>学ランの色:<slot name="uniformColor">白色</slot></p>
   </div>
 </template>
 
