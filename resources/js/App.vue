@@ -6,11 +6,7 @@
       <button @click="city = 'kyoto'">京都</button>
     </div>
     <div>
-      <Tokyo v-if="city == 'tokyo'" />
-      <Kyoto v-else />
-    </div>
-    <div>
-      <component v-bind:is="tab"></component>
+      <component :is="tab"></component>
     </div>
   </div>
 </template>
@@ -27,7 +23,7 @@ const tabs = {
   kyoto: "Kyoto",
 };
 
-const tab = computed(() => tabs[city.value]);
+const tab = computed(() => (city.value === "tokyo" ? Tokyo : Kyoto));
 </script>
 
 <style lang="scss" scoped>
