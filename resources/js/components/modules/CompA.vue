@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Provide / Inject</h1>
-    <CompA />
+    <h2>CompA コンポーネント</h2>
+    <CompB />
   </div>
 </template>
 
 <script setup>
-import CompA from "./components/modules/CompA.vue";
+import CompB from "./CompB.vue";
 </script>
 
 <style lang="scss" scoped></style>
