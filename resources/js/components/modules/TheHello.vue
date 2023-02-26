@@ -1,6 +1,8 @@
 <template>
   <div class="m-hello">
     <h2>初めてのコンポーネント</h2>
+    <p v-if="message">{{ message }}</p>
+    <p v-if="name">{{ name }}</p>
     <p>Count:{{ count }}</p>
     <p>Reactive Count: {{ state.count }}</p>
     <div>
@@ -12,6 +14,8 @@
 
 <script setup>
 import { ref, reactive } from "vue";
+
+const { message, name } = defineProps(["message", "name"]);
 
 const count = ref(0);
 const state = reactive({
