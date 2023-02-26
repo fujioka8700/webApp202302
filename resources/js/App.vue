@@ -2,15 +2,18 @@
   <div class="app">
     <h1>Vue3 入門 Components 2周目</h1>
     <h2>Provide / Inject でデータ渡し</h2>
+    <input type="text" v-model="message" />
     <TheCompA />
   </div>
 </template>
 
 <script setup>
 import TheCompA from "./components/modules/TheCompA.vue";
-import { provide } from "vue";
+import { provide, ref } from "vue";
 
-provide("message", "Provide / Inject でデータ渡し");
+const message = ref("Provide / Inject でデータ渡し");
+
+provide("message", message);
 </script>
 
 <style lang="scss" scoped>
