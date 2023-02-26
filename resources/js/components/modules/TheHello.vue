@@ -15,7 +15,10 @@
 <script setup>
 import { ref, reactive } from "vue";
 
-const { message, name } = defineProps(["message", "name"]);
+const { message, name } = defineProps({
+  message: String,
+  name: String,
+});
 
 const count = ref(0);
 const state = reactive({
