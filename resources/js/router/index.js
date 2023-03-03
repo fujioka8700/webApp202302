@@ -13,10 +13,11 @@ const router = createRouter({
       name: "about",
       component: () => import("../components/pages/AboutView.vue"),
       beforeEnter: (to, from) => {
-        const isAuthenticated = false;
-
-        if (!isAuthenticated && to.name !== "home") {
-          return { name: "home" };
+        if (Object.keys(to.query).length) {
+          return {
+            path: to.path,
+            query: {},
+          };
         }
       },
     },
