@@ -47,7 +47,9 @@ router.beforeEach((to, from) => {
   console.log("to:", to);
   console.log("from", from);
 
-  return false;
+  if (to.name !== "home") {
+    return { name: "home" };
+  }
 });
 
 export default router;
