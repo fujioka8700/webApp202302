@@ -14,7 +14,7 @@
         >
       </nav>
     </header>
-    <RouterView :key="$route.params.userId" />
+    <RouterView />
   </div>
 </template>
 

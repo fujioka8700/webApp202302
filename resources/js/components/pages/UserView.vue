@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
+import { onBeforeRouteUpdate } from "vue-router";
 
 const props = defineProps({
   userId: String,
@@ -21,12 +21,10 @@ const props = defineProps({
   last_name: String,
 });
 
-const route = useRoute();
 const user = ref([]);
 
-let id = parseInt(props.userId);
-
-const fetchUser = async () => {
+const fetchUser = async (userId) => {
+  const id = parseInt(userId);
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/users/${id}`
   );
@@ -35,12 +33,11 @@ const fetchUser = async () => {
 };
 
 onMounted(() => {
-  fetchUser();
+  fetchUser(props.userId);
 });
 
-watch(route, () => {
-  id = parseInt(route.params.userId);
-  fetchUser();
+onBeforeRouteUpdate((to, from) => {
+  fetchUser(to.params.userId);
 });
 </script>
 
