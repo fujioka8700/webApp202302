@@ -4,6 +4,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/users">ユーザー一覧</RouterLink>
       </nav>
     </header>
     <RouterView />
