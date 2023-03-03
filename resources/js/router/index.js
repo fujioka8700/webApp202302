@@ -45,10 +45,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-  console.log(to);
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
-  if (!isAuthenticated && to.name !== "home") {
+  console.log(to.meta.requiresAuth);
+
+  if (to.meta.requiresAuth && !isAuthenticated && to.name !== "home") {
     return { name: "home" };
   }
 });
