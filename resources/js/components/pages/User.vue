@@ -17,7 +17,7 @@ import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
 const user = ref([]);
-const id = parseInt(route.params.id);
+let id = parseInt(route.params.userId);
 
 const fetchUser = async () => {
   const response = await fetch(
@@ -28,11 +28,12 @@ const fetchUser = async () => {
   user.value = data;
 };
 
-watch(route, () => {
-  console.log(route.params);
+onMounted(() => {
+  fetchUser();
 });
 
-onMounted(() => {
+watch(route, () => {
+  id = parseInt(route.params.userId);
   fetchUser();
 });
 </script>
