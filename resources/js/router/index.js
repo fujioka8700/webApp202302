@@ -11,6 +11,7 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
+      alias: "/aboutus",
       component: () => import("../components/pages/AboutView.vue"),
     },
     {
@@ -33,10 +34,6 @@ const router = createRouter({
           component: () => import("../components/pages/ProfileView.vue"),
         },
       ],
-    },
-    {
-      path: "/home",
-      redirect: { name: "home" },
     },
     {
       path: "/:pathMatch(.*)",
