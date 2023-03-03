@@ -7,6 +7,7 @@
       <li>User Name: {{ user.name }}</li>
       <li>User Email: {{ user.email }}</li>
     </ul>
+    <RouterView />
   </div>
 </template>
 

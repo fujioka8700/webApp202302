@@ -27,6 +27,12 @@ const router = createRouter({
         first_name: "John",
         last_name: "Doe",
       }),
+      children: [
+        {
+          path: "profile",
+          component: () => import("../components/pages/ProfileView.vue"),
+        },
+      ],
     },
   ],
 });
