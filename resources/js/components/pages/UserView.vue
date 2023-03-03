@@ -11,13 +11,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const user = ref([]);
 
-const id = parseInt(route.params.userId);
+let id = parseInt(route.params.userId);
 
 const fetchUser = async () => {
   const response = await fetch(
@@ -28,6 +28,11 @@ const fetchUser = async () => {
 };
 
 onMounted(() => {
+  fetchUser();
+});
+
+watch(route, () => {
+  id = parseInt(route.params.userId);
   fetchUser();
 });
 </script>

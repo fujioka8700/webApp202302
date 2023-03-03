@@ -4,9 +4,11 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/users/1">User1</RouterLink>
+        <RouterLink to="/users/2">User2</RouterLink>
       </nav>
     </header>
-    <RouterView />
+    <RouterView :key="$route.params.userId" />
   </div>
 </template>
 
