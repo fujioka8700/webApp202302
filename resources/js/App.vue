@@ -4,8 +4,12 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/users/1">User1</RouterLink>
-        <RouterLink to="/users/2">User2</RouterLink>
+        <RouterLink :to="{ name: 'user', params: { userId: 1 } }"
+          >User1</RouterLink
+        >
+        <RouterLink :to="{ name: 'user', params: { userId: 2 } }"
+          >User2</RouterLink
+        >
       </nav>
     </header>
     <RouterView :key="$route.params.userId" />
