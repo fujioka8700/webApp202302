@@ -12,8 +12,16 @@ const router = createRouter({
       path: "/about",
       name: "about",
       alias: "/aboutus",
-      meta: { requiresAuth: true },
+      // meta: { requiresAuth: true },
       component: () => import("../components/pages/AboutView.vue"),
+      beforeEnter: (to, from) => {
+        const isAuthenticated = false;
+
+        console.log(isAuthenticated);
+        if (!isAuthenticated && to.name !== "home") {
+          return { name: "home" };
+        }
+      },
     },
     {
       path: "/users",
@@ -44,12 +52,12 @@ const router = createRouter({
   ],
 });
 
-router.beforeEach((to, from) => {
-  const isAuthenticated = false;
+// router.beforeEach((to, from) => {
+//   const isAuthenticated = false;
 
-  if (to.meta.requiresAuth && !isAuthenticated && to.name !== "home") {
-    return { name: "home" };
-  }
-});
+//   if (to.meta.requiresAuth && !isAuthenticated && to.name !== "home") {
+//     return { name: "home" };
+//   }
+// });
 
 export default router;
