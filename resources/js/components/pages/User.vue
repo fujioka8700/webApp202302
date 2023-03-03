@@ -32,10 +32,10 @@ onMounted(() => {
   fetchUser();
 });
 
-watch(route, () => {
-  id = parseInt(route.params.userId);
-  fetchUser();
-});
+// watch(route, () => {
+//   id = parseInt(route.params.userId);
+//   fetchUser();
+// });
 </script>
 
 <style lang="scss" scoped></style>

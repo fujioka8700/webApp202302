@@ -9,7 +9,7 @@
         <RouterLink to="/user/2">User2</RouterLink>
       </nav>
     </header>
-    <RouterView />
+    <RouterView :key="$route.params.userId" />
   </div>
 </template>
 
