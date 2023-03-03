@@ -22,7 +22,11 @@ const router = createRouter({
       path: "/users/:userId",
       name: "user",
       component: () => import("../components/pages/UserView.vue"),
-      props: true,
+      props: (route) => ({
+        userId: route.params.userId,
+        first_name: "John",
+        last_name: "Doe",
+      }),
     },
   ],
 });
