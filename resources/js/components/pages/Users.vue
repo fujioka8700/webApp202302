@@ -1,9 +1,14 @@
 <template>
-  <div>
+  <div class="p-users">
     <h2>Users</h2>
     <ul>
       <li v-for="user in users" :key="user.id">
-        <RouterLink :to="`/user/${user.id}`">{{ user.name }}</RouterLink>
+        <span
+          >{{ user.id }} :
+          <RouterLink :to="`/user/${user.id}`">{{
+            user.name
+          }}</RouterLink></span
+        >
       </li>
     </ul>
   </div>
