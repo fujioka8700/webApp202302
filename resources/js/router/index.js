@@ -21,6 +21,7 @@ const router = createRouter({
     {
       path: "/user/:userId",
       name: "user",
+      props: true,
       component: () => import("../components/pages/User.vue"),
     },
   ],

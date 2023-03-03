@@ -14,10 +14,13 @@
 import { ref, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+const props = defineProps({
+  userId: String,
+});
 const route = useRoute();
 const router = useRouter();
 const user = ref([]);
-let id = parseInt(route.params.userId);
+let id = parseInt(props.userId);
 
 const fetchUser = async () => {
   const response = await fetch(
@@ -32,10 +35,10 @@ onMounted(() => {
   fetchUser();
 });
 
-// watch(route, () => {
-//   id = parseInt(route.params.userId);
-//   fetchUser();
-// });
+watch(route, () => {
+  id = parseInt(props.userId);
+  fetchUser();
+});
 </script>
 
 <style lang="scss" scoped></style>
