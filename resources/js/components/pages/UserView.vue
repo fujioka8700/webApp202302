@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>User 詳細</h2>
-    <button @click="$router.push({ path: '/users' })">戻る</button>
+    <button @click="$router.push({ name: 'users' })">戻る</button>
     <ul>
       <li>User Id: {{ user.id }}</li>
       <li>User Name: {{ user.name }}</li>
