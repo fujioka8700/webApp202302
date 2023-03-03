@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
@@ -27,6 +27,10 @@ const fetchUser = async () => {
   const data = await response.json();
   user.value = data;
 };
+
+watch(route, () => {
+  console.log(route.params);
+});
 
 onMounted(() => {
   fetchUser();
