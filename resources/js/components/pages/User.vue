@@ -17,6 +17,7 @@
 <script setup>
 import { ref, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { OK } from "../../util";
 
 const props = defineProps({
   userId: String,
@@ -24,14 +25,22 @@ const props = defineProps({
   last_name: String,
 });
 const route = useRoute();
-// const router = useRouter();
+const router = useRouter();
 const user = ref([]);
 let id = parseInt(props.userId);
+
+const withUser = (response) => {
+  if (response.status !== OK) {
+    router.push({ path: "/notfound" });
+  }
+};
 
 const fetchUser = async () => {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/users/${id}`
   );
+
+  withUser(response);
 
   const data = await response.json();
   user.value = data;
