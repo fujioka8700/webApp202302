@@ -1,7 +1,10 @@
 <template>
   <div>
     <h2>ユーザー詳細</h2>
-    <button @click="router.push({ name: 'users' })">戻る</button>
+    <button @click="$router.push({ name: 'users' })">戻る</button>
+    <button @click="$router.back()">戻る</button>
+    <button @click="$router.go(-1)">戻る</button>
+    <button @click="$router.go(1)">進む</button>
     <ul>
       <li>User Id : {{ user.id }}</li>
       <li>User Name : {{ user.name }}</li>
@@ -21,7 +24,7 @@ const props = defineProps({
   last_name: String,
 });
 const route = useRoute();
-const router = useRouter();
+// const router = useRouter();
 const user = ref([]);
 let id = parseInt(props.userId);
 
