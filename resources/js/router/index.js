@@ -21,7 +21,11 @@ const router = createRouter({
     {
       path: "/user/:userId",
       name: "user",
-      props: true,
+      props: (route) => ({
+        userId: route.params.userId,
+        first_name: "John",
+        last_name: "Doe",
+      }),
       component: () => import("../components/pages/User.vue"),
     },
   ],
