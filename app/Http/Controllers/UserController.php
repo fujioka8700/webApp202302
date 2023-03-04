@@ -46,9 +46,16 @@ class UserController extends Controller
   /**
    * Display the specified resource.
    */
-  public function show(string $id): Response
+  public function show(string $id): JsonResponse
   {
-    //
+    $user = User::find($id);
+
+    return response()->json(
+      $user,
+      200,
+      self::HEADERS,
+      JSON_UNESCAPED_UNICODE
+    );
   }
 
   /**

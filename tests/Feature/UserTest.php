@@ -16,16 +16,25 @@ class UserTest extends TestCase
     parent::setUp();
 
     User::factory()
-      ->count(1)
+      ->count(10)
       ->create();
   }
 
   /**
    * A basic feature test example.
    */
-  public function test_example(): void
+  public function test_user_list(): void
   {
     $response = $this->getJson('/api/users');
+
+    $response->assertStatus(200);
+  }
+
+  public function test_one_user(): void
+  {
+    $user = User::first();
+
+    $response = $this->getJson("/api/users/{$user->id}");
 
     $response->assertStatus(200);
   }
