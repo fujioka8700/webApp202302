@@ -3,14 +3,16 @@
     <h2>ユーザー一覧</h2>
     <ul>
       <li v-for="user in users" :key="user.id">
-        UserName:{{ user.name }} Email: {{ user.email }}
+        <RouterLink :to="{ name: 'user', params: { userId: user.id } }">
+          {{ user.name }}
+        </RouterLink>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const users = ref([]);
 
@@ -19,7 +21,10 @@ const getUsers = () => {
     users.value = res.data;
   });
 };
-getUsers();
+
+onMounted(() => {
+  getUsers();
+});
 </script>
 
 <style lang="scss" scoped></style>
