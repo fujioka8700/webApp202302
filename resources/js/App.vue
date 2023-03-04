@@ -2,11 +2,15 @@
   <div>
     <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/users">ユーザー一覧</RouterLink>
-        <RouterLink to="/user/1">User1</RouterLink>
-        <RouterLink to="/user/2">User2</RouterLink>
+        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+        <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <RouterLink :to="{ name: 'users' }">Users</RouterLink>
+        <RouterLink :to="{ name: 'user', params: { userId: 1 } }"
+          >User1</RouterLink
+        >
+        <RouterLink :to="{ name: 'user', params: { userId: 2 } }"
+          >User2</RouterLink
+        >
       </nav>
     </header>
     <RouterView />
