@@ -14,6 +14,10 @@ const router = createRouter({
       component: () => import("../components/pages/About.vue"),
     },
     {
+      path: "/home",
+      redirect: "/",
+    },
+    {
       path: "/users",
       name: "users",
       component: () => import("../components/pages/Users.vue"),
