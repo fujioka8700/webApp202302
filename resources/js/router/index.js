@@ -48,10 +48,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-  console.log("to:", to);
-  console.log("from:", from);
+  const isAuthenticated = true;
 
-  return false;
+  if (!isAuthenticated && to.name !== "home") {
+    return { name: "home" };
+  }
 });
 
 export default router;
