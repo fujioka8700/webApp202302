@@ -11,8 +11,15 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      meta: { requiresAuth: true },
       component: () => import("../components/pages/About.vue"),
+      beforeEnter: (to, from) => {
+        if (Object.keys(to.query).length) {
+          return {
+            path: to.path,
+            query: {},
+          };
+        }
+      },
     },
     {
       path: "/home",
@@ -46,14 +53,6 @@ const router = createRouter({
       component: () => import("../components/pages/NotFound.vue"),
     },
   ],
-});
-
-router.beforeEach((to, from) => {
-  const isAuthenticated = false;
-
-  if (to.meta.requiresAuth && !isAuthenticated && to.name !== "home") {
-    return { name: "home" };
-  }
 });
 
 export default router;
