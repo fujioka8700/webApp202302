@@ -11,6 +11,7 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
+      meta: { requiresAuth: true },
       component: () => import("../components/pages/About.vue"),
     },
     {
@@ -48,9 +49,9 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
-  if (!isAuthenticated && to.name !== "home") {
+  if (to.meta.requiresAuth && !isAuthenticated && to.name !== "home") {
     return { name: "home" };
   }
 });
