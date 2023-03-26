@@ -1,23 +1,18 @@
-<script setup>
-const isActive = "active";
-const isBlack = "back";
-</script>
-
 <template>
-  <h1>Vue 3 入門</h1>
-  <p :class="[isActive, isBlack]">v-bindの設定方法の確認</p>
+  <div>
+    <header>
+      <nav>
+        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+      </nav>
+    </header>
+    <RouterView />
+  </div>
 </template>
 
-<style>
-.active {
-  color: red;
-}
+<script setup></script>
 
-.underLine {
-  text-decoration: underline;
-}
-
-.back {
-  background-color: black;
+<style lang="scss" scoped>
+.router-link-active {
+  font-weight: bold;
 }
 </style>
